@@ -3,61 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>설문 결과</title>
+  <title>Score</title>
 
   <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      padding: 50px;
-      background-color: #f4f4f4;
-    }
 
-    .box {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      max-width: 400px;
-      margin: auto;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
 
-    input {
-      padding: 10px;
-      width: 80%;
-      font-size: 18px;
-    }
+body {
+  margin: 0;
+  height: 100vh;
 
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 18px;
-      cursor: pointer;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    #result {
-      margin-top: 30px;
-      font-size: 20px;
-      font-weight: bold;
-    }
-  </style>
+  background:
+    radial-gradient(circle at top, #2d006b, #05010f);
+
+  font-family: 'Orbitron', sans-serif;
+
+  color: white;
+}
+
+.box {
+  width: 400px;
+
+  background: rgba(20, 10, 40, 0.7);
+
+  border: 2px solid #bb66ff;
+
+  border-radius: 25px;
+
+  padding: 40px;
+
+  text-align: center;
+
+  box-shadow:
+    0 0 20px #a020f0,
+    0 0 40px #7a00ff;
+
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  font-size: 40px;
+
+  color: #e0b3ff;
+
+  text-shadow:
+    0 0 10px #d580ff,
+    0 0 20px #b84dff;
+
+  margin-bottom: 30px;
+}
+
+p {
+  color: #d8b4ff;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 80%;
+
+  padding: 15px;
+
+  border: 2px solid #bb66ff;
+
+  border-radius: 12px;
+
+  background: #120022;
+
+  color: white;
+
+  font-size: 20px;
+
+  font-family: 'Orbitron', sans-serif;
+
+  outline: none;
+
+  box-shadow: 0 0 15px #8a2be2;
+}
+
+button {
+  margin-top: 25px;
+
+  padding: 15px 30px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(90deg, #8a2be2, #d633ff);
+
+  color: white;
+
+  font-size: 18px;
+
+  font-family: 'Orbitron', sans-serif;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 15px #c44dff,
+    0 0 30px #7a00ff;
+
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+
+  box-shadow:
+    0 0 25px #e066ff,
+    0 0 50px #b300ff;
+}
+
+#result {
+  margin-top: 30px;
+
+  font-size: 22px;
+
+  color: #f0c3ff;
+
+  text-shadow: 0 0 10px #d966ff;
+}
+
+</style>
+
 </head>
 
 <body>
 
   <div class="box">
-    <h1>설문 결과 확인</h1>
+   <h1>SURVEY RESULT</h1>
 
-    <p>총 점수를 입력하세요</p>
+<p>ENTER YOUR TOTAL SCORE</p>
 
-    <input type="number" id="score">
+<input type="number" id="score">
 
-    <br>
+<button onclick="showResult()">
+VIEW RESULT
+</button>
 
-    <button onclick="showResult()">결과 보기</button>
-
-    <div id="result"></div>
-  </div>
-
+<div id="result"></div>
+    
   <script>
     function showResult() {
 
