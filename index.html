@@ -149,27 +149,37 @@ VIEW RESULT
 <div id="result"></div>
     
   <script>
-    function showResult() {
+function showResult() {
 
-      let score = Number(document.getElementById("score").value);
+  if (document.getElementById("score").value === "") {
+    document.getElementById("result").innerText =
+      "점수를 입력해주세요.";
+    return;
+  }
 
-      let result = "";
+  let score = Number(document.getElementById("score").value);
 
-      if (score <= 20) {
-        result = "당신은 A 유형입니다!";
-      }
+  let result = "";
 
-      else if (score <= 40) {
-        result = "당신은 B 유형입니다!";
-      }
+  if (score <= 50) {
+    result = "당신의 AI 심리·사회적 취약성 지수는 매우 낮음 단계입니다.";
+  }
 
-      else {
-        result = "당신은 C 유형입니다!";
-      }
+  else if (score <= 56) {
+    result = "당신의 AI 심리·사회적 취약성 지수는 보통 단계입니다.";
+  }
 
-      document.getElementById("result").innerText = result;
-    }
-  </script>
+  else if (score <= 65) {
+    result = "당신의 AI 심리·사회적 취약성 지수는 높음 단계입니다.";
+  }
 
+  else {
+    result = "당신의 AI 심리·사회적 취약성 지수는 매우 높음 단계입니다.";
+  }
+
+  document.getElementById("result").innerText = result;
+}
+</script>
+    
 </body>
 </html>
