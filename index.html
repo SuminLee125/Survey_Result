@@ -162,9 +162,9 @@ function showResult() {
   let result = "";
   let advice = "";
 
-  if (score <= 50) {
+  if (score <= 39) {
 
-    result = "당신의 AI 심리·사회적 취약성 지수는 매우 낮음 단계입니다.";
+    result = "당신의 AI 의존·취약성 지수는 매우 낮음 단계입니다.";
 
     advice = `
     <br><br>
@@ -172,17 +172,30 @@ function showResult() {
     앞으로도 현실 세계의 인간관계를 꾸준히 유지해 보세요.
 
     <ol>
-      <li>주 1일 이상 신문기사와 뉴스 등을 읽으며 비판적 사고 능력 유지하기</li>
-      <li>주 1일 이상 디지털 디톡스 시간 시도해보기</li>
-      <li>AI 사용 시간 기록하며 유지하기</li>
-      <li>AI 알고리즘 세탁하기</li>
+      <li>캠페인에 참여하여 AI를 건강하게 활용하는 다른 방법 알아보기</li>
     </ol>
     `;
   }
 
-  else if (score <= 56) {
+    else if (score <= 50) {
 
-    result = "당신의 AI 심리·사회적 취약성 지수는 보통 단계입니다.";
+    result = "당신의 AI 의존·취약성 지수는 낮음 단계입니다.";
+
+    advice = `
+    <br><br>
+    AI를 적절하게 활용하는 편입니다.
+    사용 습관을 점검하고 발전하여 취약성 지수를 더 낮게 만들어보세요.
+    <ol>
+      <li>주 1일 이상 디지털 디톡스 시간 시도해보기</li>
+      <li>AI 사용 시간 기록하며 유지하기</li>
+      <li>AI 알고리즘 점검하기</li>
+    </ol>
+    `;
+  }
+      
+  else if (score <= 54) {
+
+    result = "당신의 AI 의존·취약성 지수는 보통 단계입니다.";
 
     advice = `
     <br><br>
@@ -199,9 +212,9 @@ function showResult() {
     `;
   }
 
-  else if (score <= 65) {
+  else if (score <= 60) {
 
-    result = "당신의 AI 심리·사회적 취약성 지수는 높음 단계입니다.";
+    result = "당신의 AI 의존·취약성 지수는 높음 단계입니다.";
 
     advice = `
     <br><br>
@@ -219,7 +232,7 @@ function showResult() {
 
   else {
 
-    result = "당신의 AI 심리·사회적 취약성 지수는 매우 높음 단계입니다.";
+    result = "당신의 AI 의존·취약성 지수는 매우 높음 단계입니다.";
 
     advice = `
     <br><br>
