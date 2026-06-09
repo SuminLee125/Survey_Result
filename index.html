@@ -174,6 +174,15 @@ function showResult() {
   <ol>
     <li>Join the campaign to discover more ways to use AI responsibly.</li>
   </ol>
+  
+  <hr style="border-top: 1px dashed #ccc; margin: 20px 0;">
+  <strong>[한글 해석]</strong><br><br>
+  현재 AI를 건강하고 균형 잡힌 방식으로 사용하고 있습니다. 
+  현실 세계에서 사람들과의 강한 유대 관계를 계속 유지하세요.
+  
+  <ol>
+    <li>AI를 책임감 있게 사용하는 더 많은 방법을 알아보기 위해 캠페인에 참여해 보세요.</li>
+  </ol>
   `;
 }
 
@@ -190,6 +199,17 @@ else if (score <= 50) {
     <li>Try a digital detox at least once a week.</li>
     <li>Track and maintain your AI usage time.</li>
     <li>Review and reflect on how AI algorithms influence your experience.</li>
+  </ol>
+  
+  <hr style="border-top: 1px dashed #ccc; margin: 20px 0;">
+  <strong>[한글 해석]</strong><br><br>
+  AI를 적절하게 사용하고 있습니다. 
+  취약성 지수를 더욱 낮추기 위해 습관을 지속적으로 모니터링하고 개선해 나가세요.
+
+  <ol>
+    <li>최소 일주일에 한 번은 디지털 디톡스를 시도해 보세요.</li>
+    <li>AI 사용 시간을 추적하고 관리하세요.</li>
+    <li>AI 알고리즘이 귀하의 경험에 어떤 영향을 미치는지 검토하고 되돌아보세요.</li>
   </ol>
   `;
 }
@@ -210,6 +230,19 @@ else if (score <= 54) {
     <li>Try a digital detox at least once a week.</li>
     <li>Read news articles and write summaries and critical comments in a notebook at least once a week.</li>
   </ol>
+  
+  <hr style="border-top: 1px dashed #ccc; margin: 20px 0;">
+  <strong>[한글 해석]</strong><br><br>
+  AI 사용량이 증가하고 있을 수 있습니다. 
+  AI와의 상호작용뿐만 아니라 주변 사람들과의 소통을 유지하는 것이 중요합니다. 
+  다음 미션들을 완수해 보세요:
+
+  <ol>
+    <li>일주일에 3일 이상 최소 한 명의 다른 사람과 함께 활동에 참여하세요.</li>
+    <li>일주일에 최소 2일 이상 자신의 감정에 대한 자기 성찰 일기를 작성하세요.</li>
+    <li>최소 일주일에 한 번은 디지털 디톡스를 시도해 보세요.</li>
+    <li>일주일에 최소 한 번은 뉴스 기사를 읽고 노트에 요약 및 비판적 의견을 작성해 보세요.</li>
+  </ol>
   `;
 }
 
@@ -227,6 +260,18 @@ else if (score <= 60) {
     <li>Participate in activities with at least one other person on three or more days per week.</li>
     <li>Write a self-reflection journal about your emotions on three or more days per week.</li>
     <li>Read for at least 30 minutes and write a summary and reflection at least twice a week.</li>
+  </ol>
+  
+  <hr style="border-top: 1px dashed #ccc; margin: 20px 0;">
+  <strong>[한글 해석]</strong><br><br>
+  AI에 대한 정서적 의존 징후가 나타나고 있을 수 있습니다. 
+  오프라인 활동 참여를 늘리고 현실 세계의 인간관계를 강화하는 것을 권장합니다.
+
+  <ol>
+    <li>매일의 AI 사용 시간과 목적을 기록하고, 이를 점진적으로 줄여나가도록 노력하세요.</li>
+    <li>일주일에 3일 이상 최소 한 명의 다른 사람과 함께 활동에 참여하세요.</li>
+    <li>일주일에 3일 이상 자신의 감정에 대한 자기 성찰 일기를 작성하세요.</li>
+    <li>일주일에 최소 2회, 30분 이상 독서하고 요약 및 성찰 글을 작성하세요.</li>
   </ol>
   `;
 }
@@ -246,13 +291,22 @@ else {
     <li>Write a brief self-reflection journal every day.</li>
     <li>If needed, consider seeking support from a counseling center or a mental health professional.</li>
   </ol>
+  
+  <hr style="border-top: 1px dashed #ccc; margin: 20px 0;">
+  <strong>[한글 해석]</strong><br><br>
+  AI가 삶에서 정서적 지지의 주된 원천이 되고 있을 수 있습니다. 
+  주변 사람들과의 관계를 강화하기 위해 의식적인 노력을 기울여야 합니다.
+
+  <ol>
+    <li>매일의 AI 사용 제한을 설정하고 어떻게 사용하고 있는지 기록하세요.</li>
+    <li>매일 최소 10분 동안 가족이나 친구와 대화하고 오프라인 활동에 참여하세요.</li>
+    <li>매일 짧은 자기 성찰 일기를 작성하세요.</li>
+    <li>필요한 경우, 상담 센터나 정신 건강 전문가의 도움을 받는 것을 고려해 보세요.</li>
+  </ol>
   `;
 }
 
-  document.getElementById("result").innerHTML =
-    result + advice;
-}
-</script>    
+document.getElementById("result").innerHTML = result + advice;
     
 </body>
 </html>
