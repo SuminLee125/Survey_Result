@@ -6,308 +6,250 @@
   <title>Score</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+    body {
+      margin: 0;
+      /* 내용이 길어질 수 있으므로 고정 height 대신 min-height를 사용하고 패딩을 줍니다 */
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #2d006b, #05010f);
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  height: 100vh;
+    .box {
+      width: 550px;
+      max-width: 100%; /* 모바일 대응 */
+      background: rgba(20, 10, 40, 0.7);
+      border: 2px solid #bb66ff;
+      border-radius: 25px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 0 20px #a020f0, 0 0 40px #7a00ff;
+      backdrop-filter: blur(10px);
+      box-sizing: border-box;
+    }
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    h1 {
+      font-size: 40px;
+      color: #e0b3ff;
+      text-shadow: 0 0 10px #d580ff, 0 0 20px #b84dff;
+      margin-bottom: 30px;
+      margin-top: 0;
+    }
 
-  background:
-    radial-gradient(circle at top, #2d006b, #05010f);
+    p {
+      color: #d8b4ff;
+      margin-bottom: 20px;
+    }
 
-  font-family: 'Orbitron', sans-serif;
+    input {
+      width: 80%;
+      padding: 15px;
+      border: 2px solid #bb66ff;
+      border-radius: 12px;
+      background: #120022;
+      color: white;
+      font-size: 20px;
+      font-family: 'Orbitron', sans-serif;
+      outline: none;
+      box-shadow: 0 0 15px #8a2be2;
+    }
 
-  color: white;
-}
+    button {
+      margin-top: 25px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 15px;
+      background: linear-gradient(90deg, #8a2be2, #d633ff);
+      color: white;
+      font-size: 18px;
+      font-family: 'Orbitron', sans-serif;
+      cursor: pointer;
+      box-shadow: 0 0 15px #c44dff, 0 0 30px #7a00ff;
+      transition: 0.3s;
+    }
 
-.box {
-  width: 550px;
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #e066ff, 0 0 50px #b300ff;
+    }
 
-  background: rgba(20, 10, 40, 0.7);
+    #result {
+      margin-top: 30px;
+      font-size: 18px; /* 가독성을 위해 본문 폰트 크기를 살짝 조절했습니다 */
+      color: #f0c3ff;
+      text-shadow: 0 0 5px #d966ff;
+      text-align: left; /* 결과 리스트가 깔끔하게 정렬되도록 왼쪽 정렬로 변경 */
+      line-height: 1.6; /* 줄간격 확보 */
+    }
 
-  border: 2px solid #bb66ff;
+    /* 결과 타이틀만 따로 강조 */
+    .result-title {
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      display: block;
+      margin-bottom: 15px;
+    }
 
-  border-radius: 25px;
+    ol {
+      padding-left: 20px;
+      margin: 15px 0;
+    }
 
-  padding: 40px;
-
-  text-align: center;
-
-  box-shadow:
-    0 0 20px #a020f0,
-    0 0 40px #7a00ff;
-
-  backdrop-filter: blur(10px);
-}
-
-h1 {
-  font-size: 40px;
-
-  color: #e0b3ff;
-
-  text-shadow:
-    0 0 10px #d580ff,
-    0 0 20px #b84dff;
-
-  margin-bottom: 30px;
-}
-
-p {
-  color: #d8b4ff;
-  margin-bottom: 20px;
-}
-
-input {
-  width: 80%;
-
-  padding: 15px;
-
-  border: 2px solid #bb66ff;
-
-  border-radius: 12px;
-
-  background: #120022;
-
-  color: white;
-
-  font-size: 20px;
-
-  font-family: 'Orbitron', sans-serif;
-
-  outline: none;
-
-  box-shadow: 0 0 15px #8a2be2;
-}
-
-button {
-  margin-top: 25px;
-
-  padding: 15px 30px;
-
-  border: none;
-
-  border-radius: 15px;
-
-  background:
-    linear-gradient(90deg, #8a2be2, #d633ff);
-
-  color: white;
-
-  font-size: 18px;
-
-  font-family: 'Orbitron', sans-serif;
-
-  cursor: pointer;
-
-  box-shadow:
-    0 0 15px #c44dff,
-    0 0 30px #7a00ff;
-
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.05);
-
-  box-shadow:
-    0 0 25px #e066ff,
-    0 0 50px #b300ff;
-}
-
-#result {
-  margin-top: 30px;
-
-  font-size: 22px;
-
-  color: #f0c3ff;
-
-  text-shadow: 0 0 10px #d966ff;
-}
-
-</style>
-
+    li {
+      margin-bottom: 8px;
+    }
+  </style>
 </head>
 
 <body>
 
   <div class="box">
-   <h1>SURVEY RESULT</h1>
+    <h1>SURVEY RESULT</h1>
+    <p>ENTER YOUR TOTAL SCORE</p>
+    <input type="number" id="score">
+    <button onclick="showResult()">VIEW RESULT</button>
+    <div id="result"></div>
+  </div>
 
-<p>ENTER YOUR TOTAL SCORE</p>
+  <script>
+    function showResult() {
+      if (document.getElementById("score").value === "") {
+        document.getElementById("result").innerHTML = "<div class='result-title'>Enter your total score.</div>";
+        return;
+      }
 
-<input type="number" id="score">
+      let score = Number(document.getElementById("score").value);
+      let result = "";
+      let advice = "";
 
-<button onclick="showResult()">
-VIEW RESULT
-</button>
+      if (score <= 39) {
+        result = "<span class='result-title'>Your AI Dependency & Vulnerability Index is Very Low(매우 낮음).</span>";
+        advice = `
+        You are currently using AI in a healthy and balanced way.
+        Continue maintaining strong connections with people in the real world.
+        <ol>
+          <li>Join the campaign to discover more ways to use AI responsibly.</li>
+        </ol>
+        
+        <hr style="border-top: 1px dashed #bb66ff; margin: 20px 0;">
+        <strong>[한글 해석]</strong><br><br>
+        현재 AI를 건강하고 균형 잡힌 방식으로 사용하고 있습니다. 
+        현실 세계에서 사람들과의 강한 유대 관계를 계속 유지하세요.
+        <ol>
+          <li>AI를 책임감 있게 사용하는 더 많은 방법을 알아보기 위해 캠페인에 참여해 보세요.</li>
+        </ol>
+        `;
+      } 
+      else if (score <= 50) {
+        result = "<span class='result-title'>Your AI Dependency & Vulnerability Index is Low(낮음).</span>";
+        advice = `
+        You are using AI appropriately.
+        Continue monitoring and improving your habits to further reduce your vulnerability index.
+        <ol>
+          <li>Try a digital detox at least once a week.</li>
+          <li>Track and maintain your AI usage time.</li>
+          <li>Review and reflect on how AI algorithms influence your experience.</li>
+        </ol>
+        
+        <hr style="border-top: 1px dashed #bb66ff; margin: 20px 0;">
+        <strong>[한글 해석]</strong><br><br>
+        AI를 적절하게 사용하고 있습니다. 
+        취약성 지수를 더욱 낮추기 위해 습관을 지속적으로 모니터링하고 개선해 나가세요.
+        <ol>
+          <li>최소 일주일에 한 번은 디지털 디톡스를 시도해 보세요.</li>
+          <li>AI 사용 시간을 추적하고 관리하세요.</li>
+          <li>AI 알고리즘이 귀하의 경험에 어떤 영향을 미치는지 검토하고 되돌아보세요.</li>
+        </ol>
+        `;
+      } 
+      else if (score <= 54) {
+        result = "<span class='result-title'>Your AI Dependency & Vulnerability Index is Moderate(보통).</span>";
+        advice = `
+        Your use of AI may be increasing.
+        It is important to maintain communication with people around you, not just interactions with AI.
+        Try completing the following missions:
+        <ol>
+          <li>Participate in activities with at least one other person on three or more days per week.</li>
+          <li>Write a self-reflection journal about your emotions on at least two days per week.</li>
+          <li>Try a digital detox at least once a week.</li>
+          <li>Read news articles and write summaries and critical comments in a notebook at least once a week.</li>
+        </ol>
+        
+        <hr style="border-top: 1px dashed #bb66ff; margin: 20px 0;">
+        <strong>[한글 해석]</strong><br><br>
+        AI 사용량이 증가하고 있을 수 있습니다. 
+        AI와의 상호작용뿐만 아니라 주변 사람들과의 소통을 유지하는 것이 중요합니다. 
+        다음 미션들을 완수해 보세요:
+        <ol>
+          <li>일주일에 3일 이상 최소 한 명의 다른 사람과 함께 활동에 참여하세요.</li>
+          <li>일주일에 최소 2일 이상 자신의 감정에 대한 자기 성찰 일기를 작성하세요.</li>
+          <li>최소 일주일에 한 번은 디지털 디톡스를 시도해 보세요.</li>
+          <li>일주일에 최소 한 번은 뉴스 기사를 읽고 노트에 요약 및 비판적 의견을 작성해 보세요.</li>
+        </ol>
+        `;
+      } 
+      else if (score <= 60) {
+        result = "<span class='result-title'>Your AI Dependency & Vulnerability Index is High(높음).</span>";
+        advice = `
+        Signs of emotional dependence on AI may be emerging.
+        We recommend increasing your participation in offline activities and strengthening real-world relationships.
+        <ol>
+          <li>Record your daily AI usage time and purpose, and gradually work to reduce it.</li>
+          <li>Participate in activities with at least one other person on three or more days per week.</li>
+          <li>Write a self-reflection journal about your emotions on three or more days per week.</li>
+          <li>Read for at least 30 minutes and write a summary and reflection at least twice a week.</li>
+        </ol>
+        
+        <hr style="border-top: 1px dashed #bb66ff; margin: 20px 0;">
+        <strong>[한글 해석]</strong><br><br>
+        AI에 대한 정서적 의존 징후가 나타나고 있을 수 있습니다. 
+        오프라인 활동 참여를 늘리고 현실 세계의 인간관계를 강화하는 것을 권장합니다.
+        <ol>
+          <li>매일의 AI 사용 시간과 목적을 기록하고, 이를 점진적으로 줄여나가도록 노력하세요.</li>
+          <li>일주일에 3일 이상 최소 한 명의 다른 사람과 함께 활동에 참여하세요.</li>
+          <li>일주일에 3일 이상 자신의 감정에 대한 자기 성찰 일기를 작성하세요.</li>
+          <li>일주일에 최소 2회, 30분 이상 독서하고 요약 및 성찰 글을 작성하세요.</li>
+        </ol>
+        `;
+      } 
+      else {
+        result = "<span class='result-title'>Your AI Dependency & Vulnerability Index is Very High(매우 높음).</span>";
+        advice = `
+        AI may be becoming a primary source of emotional support in your life.
+        Make a conscious effort to strengthen your connections with people around you.
+        <ol>
+          <li>Set limits on your daily AI usage and keep a record of how you use it.</li>
+          <li>Talk with a family member or friend for at least 10 minutes every day and participate in offline activities.</li>
+          <li>Write a brief self-reflection journal every day.</li>
+          <li>If needed, consider seeking support from a counseling center or a mental health professional.</li>
+        </ol>
+        
+        <hr style="border-top: 1px dashed #bb66ff; margin: 20px 0;">
+        <strong>[한글 해석]</strong><br><br>
+        AI가 삶에서 정서적 지지의 주된 원천이 되고 있을 수 있습니다. 
+        주변 사람들과의 관계를 강화하기 위해 의식적인 노력을 기울여야 합니다.
+        <ol>
+          <li>매일의 AI 사용 제한을 설정하고 어떻게 사용하고 있는지 기록하세요.</li>
+          <li>매일 최소 10분 동안 가족이나 친구와 대화하고 오프라인 활동에 참여하세요.</li>
+          <li>매일 짧은 자기 성찰 일기를 작성하세요.</li>
+          <li>필요한 경우, 상담 센터나 정신 건강 전문가의 도움을 받는 것을 고려해 보세요.</li>
+        </ol>
+        `;
+      }
 
-<div id="result"></div>
-    
- <script>
-function showResult() {
-
-  if (document.getElementById("score").value === "") {
-    document.getElementById("result").innerHTML =
-      "Enter your total score.";
-    return;
-  }
-
-  let score = Number(document.getElementById("score").value);
-
-  let result = "";
-  let advice = "";
-
-  if (score <= 39) {
-
-  result = "Your AI Dependency & Vulnerability Index is Very Low(매우 낮음).";
-
-  advice = `
-  <br><br>
-  You are currently using AI in a healthy and balanced way.
-  Continue maintaining strong connections with people in the real world.
-
-  <ol>
-    <li>Join the campaign to discover more ways to use AI responsibly.</li>
-  </ol>
+      // 결과 출력
+      document.getElementById("result").innerHTML = result + advice;
+      
+    } // <-- 기존 코드에서 누락되었던 showResult 함수를 닫는 중괄호입니다.
+  </script>    
   
-  <hr style="border-top: 1px dashed #ccc; margin: 20px 0;">
-  <strong>[한글 해석]</strong><br><br>
-  현재 AI를 건강하고 균형 잡힌 방식으로 사용하고 있습니다. 
-  현실 세계에서 사람들과의 강한 유대 관계를 계속 유지하세요.
-  
-  <ol>
-    <li>AI를 책임감 있게 사용하는 더 많은 방법을 알아보기 위해 캠페인에 참여해 보세요.</li>
-  </ol>
-  `;
-}
-
-else if (score <= 50) {
-
-  result = "Your AI Dependency & Vulnerability Index is Low(낮음).";
-
-  advice = `
-  <br><br>
-  You are using AI appropriately.
-  Continue monitoring and improving your habits to further reduce your vulnerability index.
-
-  <ol>
-    <li>Try a digital detox at least once a week.</li>
-    <li>Track and maintain your AI usage time.</li>
-    <li>Review and reflect on how AI algorithms influence your experience.</li>
-  </ol>
-  
-  <hr style="border-top: 1px dashed #ccc; margin: 20px 0;">
-  <strong>[한글 해석]</strong><br><br>
-  AI를 적절하게 사용하고 있습니다. 
-  취약성 지수를 더욱 낮추기 위해 습관을 지속적으로 모니터링하고 개선해 나가세요.
-
-  <ol>
-    <li>최소 일주일에 한 번은 디지털 디톡스를 시도해 보세요.</li>
-    <li>AI 사용 시간을 추적하고 관리하세요.</li>
-    <li>AI 알고리즘이 귀하의 경험에 어떤 영향을 미치는지 검토하고 되돌아보세요.</li>
-  </ol>
-  `;
-}
-
-else if (score <= 54) {
-
-  result = "Your AI Dependency & Vulnerability Index is Moderate(보통).";
-
-  advice = `
-  <br><br>
-  Your use of AI may be increasing.
-  It is important to maintain communication with people around you, not just interactions with AI.
-  Try completing the following missions:
-
-  <ol>
-    <li>Participate in activities with at least one other person on three or more days per week.</li>
-    <li>Write a self-reflection journal about your emotions on at least two days per week.</li>
-    <li>Try a digital detox at least once a week.</li>
-    <li>Read news articles and write summaries and critical comments in a notebook at least once a week.</li>
-  </ol>
-  
-  <hr style="border-top: 1px dashed #ccc; margin: 20px 0;">
-  <strong>[한글 해석]</strong><br><br>
-  AI 사용량이 증가하고 있을 수 있습니다. 
-  AI와의 상호작용뿐만 아니라 주변 사람들과의 소통을 유지하는 것이 중요합니다. 
-  다음 미션들을 완수해 보세요:
-
-  <ol>
-    <li>일주일에 3일 이상 최소 한 명의 다른 사람과 함께 활동에 참여하세요.</li>
-    <li>일주일에 최소 2일 이상 자신의 감정에 대한 자기 성찰 일기를 작성하세요.</li>
-    <li>최소 일주일에 한 번은 디지털 디톡스를 시도해 보세요.</li>
-    <li>일주일에 최소 한 번은 뉴스 기사를 읽고 노트에 요약 및 비판적 의견을 작성해 보세요.</li>
-  </ol>
-  `;
-}
-
-else if (score <= 60) {
-
-  result = "Your AI Dependency & Vulnerability Index is High(높음).";
-
-  advice = `
-  <br><br>
-  Signs of emotional dependence on AI may be emerging.
-  We recommend increasing your participation in offline activities and strengthening real-world relationships.
-
-  <ol>
-    <li>Record your daily AI usage time and purpose, and gradually work to reduce it.</li>
-    <li>Participate in activities with at least one other person on three or more days per week.</li>
-    <li>Write a self-reflection journal about your emotions on three or more days per week.</li>
-    <li>Read for at least 30 minutes and write a summary and reflection at least twice a week.</li>
-  </ol>
-  
-  <hr style="border-top: 1px dashed #ccc; margin: 20px 0;">
-  <strong>[한글 해석]</strong><br><br>
-  AI에 대한 정서적 의존 징후가 나타나고 있을 수 있습니다. 
-  오프라인 활동 참여를 늘리고 현실 세계의 인간관계를 강화하는 것을 권장합니다.
-
-  <ol>
-    <li>매일의 AI 사용 시간과 목적을 기록하고, 이를 점진적으로 줄여나가도록 노력하세요.</li>
-    <li>일주일에 3일 이상 최소 한 명의 다른 사람과 함께 활동에 참여하세요.</li>
-    <li>일주일에 3일 이상 자신의 감정에 대한 자기 성찰 일기를 작성하세요.</li>
-    <li>일주일에 최소 2회, 30분 이상 독서하고 요약 및 성찰 글을 작성하세요.</li>
-  </ol>
-  `;
-}
-
-else {
-
-  result = "Your AI Dependency & Vulnerability Index is Very High(매우 높음).";
-
-  advice = `
-  <br><br>
-  AI may be becoming a primary source of emotional support in your life.
-  Make a conscious effort to strengthen your connections with people around you.
-
-  <ol>
-    <li>Set limits on your daily AI usage and keep a record of how you use it.</li>
-    <li>Talk with a family member or friend for at least 10 minutes every day and participate in offline activities.</li>
-    <li>Write a brief self-reflection journal every day.</li>
-    <li>If needed, consider seeking support from a counseling center or a mental health professional.</li>
-  </ol>
-  
-  <hr style="border-top: 1px dashed #ccc; margin: 20px 0;">
-  <strong>[한글 해석]</strong><br><br>
-  AI가 삶에서 정서적 지지의 주된 원천이 되고 있을 수 있습니다. 
-  주변 사람들과의 관계를 강화하기 위해 의식적인 노력을 기울여야 합니다.
-
-  <ol>
-    <li>매일의 AI 사용 제한을 설정하고 어떻게 사용하고 있는지 기록하세요.</li>
-    <li>매일 최소 10분 동안 가족이나 친구와 대화하고 오프라인 활동에 참여하세요.</li>
-    <li>매일 짧은 자기 성찰 일기를 작성하세요.</li>
-    <li>필요한 경우, 상담 센터나 정신 건강 전문가의 도움을 받는 것을 고려해 보세요.</li>
-  </ol>
-  `;
-}
-
-document.getElementById("result").innerHTML = result + advice;
-</script>    
-    
 </body>
 </html>
